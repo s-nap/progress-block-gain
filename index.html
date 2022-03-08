@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan&display=swap"
+      rel="stylesheet"
+    />
+    <title>Progress</title>
+  </head>
+  <body>
+    <span class="name" style="position: absolute; left: 0px; top: 8px; 
+      font-family: 'League Spartan', 'Arial', sans-serif;
+      font-size: 18px; font-weight: 600; letter-spacing: 1px;">Progress
+    </span>
+    <div class="progress-bar">
+      <svg class="progress-ring" width="150" height="150">
+        <circle
+          class="progress-ring__circle"
+          id="progress-ring__circle1"
+          stroke="#1f75fe"
+          stroke-width="12"
+          cx="75"
+          cy="75"
+          r="64"
+          fill="transparent"
+        />
+      </svg>
+      <div class="controls">
+        <div class="amount">
+          <input
+            type="number"
+            id="percent"
+            class="percent"
+            min="0"
+            max="100"
+            oninput="validity.valid||(value='');"
+            style="padding: 0"
+          />
+          <label for="percent" class="text">Value</label>
+        </div>
+        <div class="toggle">
+          <input
+            type="checkbox"
+            id="toggle-button-animate"
+            class="toggle-button"
+          />
+          <label for="toggle-button-animate" class="text">Animate</label>
+        </div>
+        <div class="toggle">
+          <input
+            type="checkbox"
+            id="toggle-button-hide"
+            class="toggle-button"
+          />
+          <label for="toggle-button-hide" class="text">Hide</label>
+        </div>
+      </div>
+    </div>
+    <script src="progress.js"></script>
+  </body>
+</html>
