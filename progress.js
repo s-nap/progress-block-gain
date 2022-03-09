@@ -1,7 +1,8 @@
 class ProgressBar {
-  constructor(value = "", elementName = "") {
+  constructor(value = "", elementName = "", shadowName = "") {
     this.value = value;
     this.circle = this.getCircleElement(elementName);
+    this.circle_shadow = this.getCircleElement(shadowName);
     const radius = this.circle.r.baseVal.value;
     this.circumference = 2 * Math.PI * radius;
     this.animateInterval = undefined;
@@ -44,10 +45,12 @@ class ProgressBar {
 
   hideBar() {
     this.circle.classList.add("hide");
+    this.circle_shadow.classList.add("hide");
   }
 
   showBar() {
     this.circle.classList.remove("hide");
+    this.circle_shadow.classList.remove("hide");
   }
 
   startAnimateBar(callback) {
@@ -73,7 +76,11 @@ class ProgressBar {
   }
 }
 
-const progressBar = new ProgressBar(0, "progress-ring__circle1");
+const progressBar = new ProgressBar(
+  0,
+  "progress-ring__circle1",
+  "progress-ring__circle-shadow1"
+);
 
 let input = document.querySelector(".percent");
 input.addEventListener("change", e => {
